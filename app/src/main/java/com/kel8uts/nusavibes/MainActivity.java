@@ -122,4 +122,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showSelectedHero(VideoItem videoItem) {
         Toast.makeText(this, "Ini adalah video " + videoItem.getVideoTitle(), Toast.LENGTH_SHORT).show();
     }
+
+
 }

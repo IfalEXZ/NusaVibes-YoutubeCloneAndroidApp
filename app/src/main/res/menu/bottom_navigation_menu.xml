@@ -18,7 +18,7 @@
         android:icon="@drawable/baseline_subscriptions_24"/>
      <item
         android:id="@+id/bottom_library"
-        android:title="Library"
-        android:icon="@drawable/baseline_video_library_24"/>
+        android:title="Logout"
+        android:icon="@drawable/baseline_logout"/>
 
 </menu>

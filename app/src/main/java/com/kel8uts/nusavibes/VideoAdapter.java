@@ -1,5 +1,8 @@
 package com.kel8uts.nusavibes;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
+import android.content.Intent;
 import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +16,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+
 public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHolder> {
 
+
     private List<VideoItem> videoList;
+
 
     public VideoAdapter(List<VideoItem> videoList) {
         this.videoList = videoList;
@@ -35,10 +41,20 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         holder.videoTitle.setText(videoItem.getVideoTitle());
         holder.channelName.setText(videoItem.getChannelName());
         holder.channelImage.setImageResource(videoItem.getChannelImage());
-        holder.itemView.setOnClickListener(v -> {
-            Toast.makeText(holder.itemView.getContext(), "Ini adalah video " + videoItem.getVideoTitle(), Toast.LENGTH_SHORT).show();
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), VideoActivity.class);
+                v.getContext().startActivity(intent);
+            }
         });
+
+
+
+
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -58,5 +74,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
             channelName = itemView.findViewById(R.id.channelName);
             channelImage = itemView.findViewById(R.id.channelImage);
         }
+
+
     }
 }

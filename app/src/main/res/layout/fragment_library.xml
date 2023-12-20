@@ -6,13 +6,12 @@
     tools:context=".LibraryFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <Button
+        android:id="@+id/btnLogout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Library"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="40sp"
-        android:textColor="@color/white"/>
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_centerInParent="true"
+        android:layout_margin="50dp"/>
 
 </FrameLayout>
